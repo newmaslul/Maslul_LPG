@@ -149,6 +149,9 @@ nav.links a:hover{ color:var(--teal); }
 .photo-highlights{ list-style:none; display:flex; flex-direction:column; gap:14px; margin-top:24px; }
 .photo-highlights li{ display:flex; gap:10px; align-items:flex-start; font-size:15px; color:rgba(247,243,232,0.85); }
 .photo-highlights li::before{ content:"✓"; color:var(--teal); font-weight:700; flex-shrink:0; }
+.photo-frame.wide{ aspect-ratio:auto; max-width:100%; width:100%; margin-top:40px; box-shadow:0 20px 50px rgba(0,0,0,0.4); }
+.photo-frame.wide img{ aspect-ratio:3/2; object-position:center 42%; }
+@media(max-width:720px){ .photo-frame.wide img{ aspect-ratio:4/3; } }
 .quote-block{ border-inline-start:3px solid var(--teal); padding-inline-start:18px; margin:22px 0; font-size:17px; font-style:italic; color:#fff; }
 .quote-block cite{ display:block; margin-top:8px; font-style:normal; font-size:13px; color:rgba(247,243,232,0.6); }
 .values-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
@@ -374,8 +377,8 @@ footer.site-footer{ background:var(--navy-deep); color:rgba(247,243,232,0.55); t
 
 <!-- ===== PHOTO MOMENT: TRAINING ===== -->
 <section class="photo-band alt-bg">
-  <div class="wrap photo-grid reverse">
-    <div class="photo-text">
+  <div class="wrap">
+    <div class="photo-text" style="max-width:720px;">
       <span class="section-tag gold">רגע מהשטח</span>
       <h2>לא רק אימון — חוויה שנשארת</h2>
       <p>כל תרגיל נבנה כך שאף אחד לא מסיים לבד. סחיבת אלונקות, נשיאת שקי חול ופינוי פצוע — לא רק אתגר גופני, אלא תרגול של עבודת צוות אמיתית, ברוח האימונים של צוות אלוש.</p>
@@ -385,8 +388,8 @@ footer.site-footer{ background:var(--navy-deep); color:rgba(247,243,232,0.55); t
         <li>מי שלא יכול או לא מעוניין להתאמן לוקח חלק בתפקידי צוות אחרים</li>
       </ul>
     </div>
-    <div class="photo-frame">
-      <img src="images/stretcher_032.jpg" alt="קבוצה מתאמנת בסחיבת אלונקה בשטח בגדרה">
+    <div class="photo-frame wide">
+      <img src="images/liav-groups-stretcher.jpg" alt="קבוצת נוער נושאת אלונקות בדרך עפר בשטח, בשעת שקיעה">
     </div>
   </div>
 </section>
