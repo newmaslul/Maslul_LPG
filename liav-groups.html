@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בדרכו של ליאב — חוויית שטח בגדרה לקבוצות | מסלול חדש</title>
+<meta name="description" content="חוויית שטח בגדרה למשלחות, מכינות, בתי ספר וארגונים: מכירים את סיפורו של ליאב אלוש ז״ל, מתאמנים אימון כושר קרבי בצוותים, ומשוחחים על רעות ושירות משמעותי.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2733;
+  --navy-deep:#121B24;
+  --cream:#F7F3E8;
+  --cream-deep:#EFE8D8;
+  --ink:#1B2733;
+  --ink-soft:#4B5661;
+  --teal:#2BAFA0;
+  --teal-deep:#1F8F83;
+  --green:#6FA83F;
+  --green-deep:#587F33;
+  --gold:#C9972E;
+  --line: rgba(27,39,51,0.12);
+  --line-light: rgba(247,243,232,0.16);
+  --max:1180px;
+  --radius:14px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Heebo', sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img{display:block; max-width:100%; height:auto;}
+h1,h2,h3{font-weight:800; line-height:1.25;}
+.mono{font-family:'Space Mono', monospace;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+section{padding:88px 0;}
+@media(max-width:720px){ section{padding:56px 0;} }
+
+::selection{ background:var(--teal); color:#fff; }
+
+/* ===== UTILITY BAR ===== */
+.utility-bar{ background:var(--navy-deep); color:rgba(247,243,232,0.75); font-size:13px; }
+.utility-bar .wrap{ display:flex; align-items:center; justify-content:space-between; padding:9px 28px; gap:12px; flex-wrap:wrap; }
+.utility-bar .tel a{ margin-inline-start:16px; color:rgba(247,243,232,0.9); font-weight:600; }
+.utility-bar .tel a:hover{ color:var(--teal); }
+
+/* ===== NAV ===== */
+header.site{ background:var(--navy); position:sticky; top:0; z-index:50; box-shadow:0 2px 18px rgba(0,0,0,0.18); }
+.navbar{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:var(--max); margin:0 auto; gap:20px; }
+.brand{ display:flex; align-items:center; gap:10px; color:#fff; font-weight:800; font-size:18px; white-space:nowrap; }
+.brand .mark{ height:32px; width:auto; display:block; }
+nav.links{ display:flex; gap:22px; flex-wrap:wrap; }
+nav.links a{ color:rgba(247,243,232,0.82); font-weight:600; font-size:14.5px; transition:color .2s; }
+nav.links a:hover{ color:var(--teal); }
+.nav-cta{ background:var(--teal); color:#0d1a1a; padding:10px 20px; border-radius:999px; font-weight:700; font-size:14px; white-space:nowrap; transition:transform .2s, background .2s; }
+.nav-cta:hover{ background:var(--green); transform:translateY(-1px); }
+.menu-toggle{ display:none; flex-direction:column; justify-content:center; align-items:flex-end; gap:5px; width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0; }
+.menu-toggle span{ display:block; width:100%; height:2px; background:#fff; border-radius:2px; transition:transform .2s ease, opacity .2s ease; }
+.menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2){ opacity:0; }
+.menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+.mobile-links{ display:none; flex-direction:column; max-width:var(--max); margin:0 auto; padding:0 28px 16px; }
+.mobile-links a{ color:rgba(247,243,232,0.85); font-weight:600; font-size:15px; padding:13px 0; border-top:1px solid rgba(247,243,232,0.12); }
+.mobile-links.open{ display:flex; }
+@media(max-width:860px){
+  nav.links{ display:none; }
+  .menu-toggle{ display:flex; }
+}
+@media(min-width:861px){ .mobile-links{ display:none !important; } }
+
+/* ===== HERO ===== */
+.hero{
+  position:relative; overflow:hidden;
+  min-height:92vh;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--navy);
+  color:#fff; text-align:center; padding:120px 0 64px;
+}
+.hero-bg{ position:absolute; inset:0; z-index:0; }
+.hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+.hero-overlay{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(18,27,36,0.72) 0%, rgba(18,27,36,0.62) 45%, rgba(18,27,36,0.95) 100%); }
+.hero > .wrap{ position:relative; z-index:2; }
+.eyebrow-pill{ display:inline-block; border:1px solid var(--green); color:var(--green); font-size:13px; font-weight:700; padding:8px 20px; border-radius:999px; margin-bottom:28px; }
+.hero h1{ font-size:clamp(30px, 5.5vw, 54px); margin-bottom:22px; }
+.hero h1 .teal{ color:var(--teal); }
+.hero h1 .green{ color:var(--green); }
+.hero .lede{ max-width:680px; margin:0 auto 36px; font-size:18px; color:rgba(247,243,232,0.82); }
+.hero-tagline{ font-size:20px; font-weight:800; margin-bottom:24px; }
+.hero-tagline .accent{ color:var(--green); }
+.hero-signoff{ display:flex; gap:22px; justify-content:center; flex-wrap:wrap; font-size:14px; color:rgba(247,243,232,0.72); margin-bottom:32px; }
+.hero-signoff strong{ color:#fff; }
+.hero-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.pill-link{ border:1px solid rgba(247,243,232,0.45); color:#fff; padding:13px 26px; border-radius:999px; font-weight:600; font-size:15px; transition:all .2s; }
+.pill-link:hover{ background:rgba(247,243,232,0.1); border-color:#fff; }
+.pill-link.primary{ background:var(--teal); border-color:var(--teal); color:#0d1a1a; }
+.pill-link.primary:hover{ background:var(--green); border-color:var(--green); }
+
+/* ===== STATS ===== */
+.stats{ background:var(--cream-deep); }
+.stats .wrap{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:40px 28px; }
+.stat{ text-align:center; }
+.stat .num{ font-family:'Space Mono',monospace; font-size:clamp(24px,4vw,38px); font-weight:700; color:var(--green-deep); }
+.stat .label{ font-size:13.5px; color:var(--ink-soft); margin-top:6px; }
+@media(max-width:640px){ .stats .wrap{ grid-template-columns:1fr; gap:28px; } }
+
+/* ===== SECTION HEADERS ===== */
+.section-tag{ display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal-deep); background:rgba(43,175,160,0.1); padding:7px 16px; border-radius:999px; margin-bottom:18px; }
+.section-tag.green{ color:var(--green-deep); background:rgba(111,168,63,0.12); }
+.section-tag.gold{ color:#8a6a1f; background:rgba(201,151,46,0.14); }
+.section-head{ max-width:760px; margin-bottom:44px; }
+.section-head h2{ font-size:clamp(26px,4vw,38px); margin-bottom:16px; }
+.section-head p{ color:var(--ink-soft); font-size:16.5px; }
+.section-sub{ font-size:20px; font-weight:800; margin:48px 0 22px; }
+.prog-section{ border-top:1px solid var(--line); }
+.prog-section.alt{ background:#fff; }
+
+/* ===== CARDS ===== */
+.card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.card-grid.cols-4{ grid-template-columns:repeat(4,1fr); }
+@media(max-width:960px){ .card-grid.cols-4{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:900px){ .card-grid{ grid-template-columns:1fr; } }
+.card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; }
+.card .num-badge{ width:34px; height:34px; border-radius:999px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; margin-bottom:16px; }
+.card.green .num-badge{ background:var(--green); }
+.card.gold .num-badge{ background:var(--gold); }
+.card h4{ font-size:17px; margin-bottom:10px; }
+.card p{ font-size:14.5px; color:var(--ink-soft); }
+
+/* ===== PHOTO MOMENT ===== */
+.photo-band{ background:var(--navy); color:#fff; }
+.photo-band.alt-bg{ background:var(--navy-deep); }
+.photo-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:center; }
+.photo-grid.reverse{ grid-template-columns:1.1fr 0.9fr; }
+@media(max-width:860px){ .photo-grid, .photo-grid.reverse{ grid-template-columns:1fr; gap:28px; } }
+.photo-frame{ border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; box-shadow:0 20px 50px rgba(0,0,0,0.35); max-width:420px; margin:0 auto; }
+.photo-grid.reverse .photo-frame{ order:2; }
+@media(max-width:860px){ .photo-grid.reverse .photo-frame{ order:0; } }
+.photo-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+.photo-text .section-tag{ margin-bottom:18px; }
+.photo-text h2{ color:#fff; font-size:clamp(24px,3.5vw,34px); margin-bottom:16px; }
+.photo-text p{ color:rgba(247,243,232,0.8); font-size:16px; }
+.photo-highlights{ list-style:none; display:flex; flex-direction:column; gap:14px; margin-top:24px; }
+.photo-highlights li{ display:flex; gap:10px; align-items:flex-start; font-size:15px; color:rgba(247,243,232,0.85); }
+.photo-highlights li::before{ content:"✓"; color:var(--teal); font-weight:700; flex-shrink:0; }
+.quote-block{ border-inline-start:3px solid var(--teal); padding-inline-start:18px; margin:22px 0; font-size:17px; font-style:italic; color:#fff; }
+.quote-block cite{ display:block; margin-top:8px; font-style:normal; font-size:13px; color:rgba(247,243,232,0.6); }
+.values-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+.value-chip{ border:1px solid rgba(247,243,232,0.35); color:#fff; font-size:13.5px; font-weight:600; padding:7px 16px; border-radius:999px; }
+
+/* ===== STAGE TIMELINE ===== */
+.stage-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch; }
+@media(max-width:960px){ .stage-grid{ grid-template-columns:1fr; } }
+.stage-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; display:flex; flex-direction:column; position:relative; }
+.stage-card .kicker{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.stage-card .num-badge{ width:34px; height:34px; border-radius:999px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; flex-shrink:0; }
+.stage-card:nth-of-type(2) .num-badge{ background:var(--green); }
+.stage-card:nth-of-type(3) .num-badge{ background:var(--gold); }
+.stage-card h4{ font-size:18px; }
+.stage-card .dur{ font-size:13px; color:var(--teal-deep); font-weight:700; margin-bottom:14px; }
+.stage-card p{ font-size:14.5px; color:var(--ink-soft); }
+.stage-note{ background:var(--cream-deep); border-radius:var(--radius); padding:20px 24px; font-size:14.5px; color:var(--ink-soft); margin-top:24px; }
+.stage-note strong{ color:var(--ink); }
+
+/* ===== INFO CARDS ===== */
+.info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+@media(max-width:720px){ .info-grid{ grid-template-columns:1fr; } }
+.info-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; }
+.info-card .label{ font-size:12.5px; font-weight:700; color:var(--teal-deep); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+.info-card p{ font-size:15px; color:var(--ink-soft); }
+.info-card ul{ list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14.5px; color:var(--ink-soft); margin-top:4px; }
+.info-card ul li{ display:flex; gap:8px; align-items:flex-start; }
+.info-card ul li::before{ content:"●"; color:var(--teal); font-size:8px; margin-top:6px; flex-shrink:0; }
+
+/* ===== CONTACT / CTA FOOTER ===== */
+.contact-cta{ background:var(--navy); color:#fff; text-align:center; }
+.contact-cta h2{ font-size:clamp(26px,4vw,38px); margin-bottom:16px; }
+.contact-cta h2 .green{ color:var(--green); }
+.contact-cta p{ max-width:600px; margin:0 auto 40px; color:rgba(247,243,232,0.78); font-size:16px; }
+.contact-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px; }
+@media(max-width:860px){ .contact-cards{ grid-template-columns:1fr; } }
+.contact-card{ background:rgba(247,243,232,0.06); border:1px solid var(--line-light); border-radius:var(--radius); padding:22px; display:flex; align-items:center; justify-content:space-between; gap:12px; text-align:right; }
+.contact-card .dot{ width:12px; height:12px; border-radius:50%; background:var(--teal); flex-shrink:0; }
+.contact-card .label{ font-size:12.5px; color:rgba(247,243,232,0.6); margin-bottom:6px; }
+.contact-card .value{ font-weight:700; font-size:15px; }
+.contact-card .value a{ display:block; }
+.cta-buttons{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cta-buttons .pill-link{ border-color:var(--teal); color:var(--teal); }
+.cta-buttons .pill-link:hover{ background:var(--teal); color:#0d1a1a; }
+
+footer.site-footer{ background:var(--navy-deep); color:rgba(247,243,232,0.55); text-align:center; padding:22px; font-size:13px; }
+
+/* ===== WHATSAPP FLOAT ===== */
+.wa-float{
+  position:fixed; bottom:24px; left:24px; z-index:999;
+  width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.wa-float:hover{ transform:scale(1.08); box-shadow:0 8px 24px rgba(0,0,0,0.38); }
+.wa-float svg{ width:30px; height:30px; }
+@media(max-width:480px){ .wa-float{ width:52px; height:52px; bottom:16px; left:16px; } .wa-float svg{ width:27px; height:27px; } }
+
+.reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="wrap">
+    <span>גדרה · פנינה 8</span>
+    <span class="tel"><a href="tel:0528501313">רולי 052-8501313</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="navbar">
+    <a class="brand" href="programs.html">
+      <img class="mark" src="images/logo-mark.png" alt="מסלול חדש">
+      מסלול חדש
+    </a>
+    <nav class="links">
+      <a href="#about-liav">הסיפור של ליאב</a>
+      <a href="#stages">מהלך הפעילות</a>
+      <a href="#takeaways">מה לוקחים איתכם</a>
+      <a href="#logistics">לוגיסטיקה ובטיחות</a>
+      <a href="#contact">יצירת קשר</a>
+    </nav>
+    <a class="nav-cta" href="#contact">בואו נתחיל</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="פתיחת תפריט" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-links" id="mobileLinks">
+    <a href="#about-liav">הסיפור של ליאב</a>
+    <a href="#stages">מהלך הפעילות</a>
+    <a href="#takeaways">מה לוקחים איתכם</a>
+    <a href="#logistics">לוגיסטיקה ובטיחות</a>
+    <a href="#contact">יצירת קשר</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="images/hero_014.jpg" alt="">
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow-pill">חוויית שטח בגדרה · משלחות, קבוצות נוער, מכינות וארגונים</span>
+    <h1>בדרכו של <span class="teal">ליאב</span><br>חוויית שטח <span class="green">בגדרה</span></h1>
+    <p class="lede">מכירים את סיפורו של רס"ל ליאב אלוש ז"ל דרך המקום שבו גדל ושבו פועלת הקהילה שממשיכה את דרכו. הקבוצה תשמע על חייו ועל שירותו כלוחם בדובדבן, תתאמן אימון שטח קבוצתי המותאם לרמתה, ותשוחח על רעות, אחריות ושירות משמעותי — על האדמה של גדרה.</p>
+    <div class="hero-tagline">לבחור, <span class="accent">להאמין</span>, להצליח</div>
+    <div class="hero-signoff">
+      <span><strong>רולי חדש</strong> · מנכ"ל מסלול חדש · 052-8501313</span>
+      <span><strong>newmaslul@gmail.com</strong></span>
+    </div>
+    <div class="hero-actions">
+      <a class="pill-link primary" href="#stages">מהלך הפעילות</a>
+      <a class="pill-link" href="#contact">פרטים ותיאום</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="num mono">90–180</div><div class="label">דקות · משך הפעילות</div></div>
+    <div class="stat"><div class="num mono">עד 30</div><div class="label">משתתפים בקבוצה, לפי דרישה</div></div>
+    <div class="stat"><div class="num mono">עברית / EN</div><div class="label">שפת ההנחיה, בהתאם לקבוצה</div></div>
+  </div>
+</div>
+
+<!-- ===== AUDIENCE ===== -->
+<section id="audience">
+  <div class="wrap">
+    <span class="section-tag">קהל היעד</span>
+    <div class="section-head">
+      <h2>פעילות שמתאימה למגוון מסגרות</h2>
+      <p>הפעילות מתקיימת בשטח פתוח בגדרה ומשלבת את סיפורו של ליאב עם התנסות בעבודת צוות ובאתגר גופני. ניתן לקיימה גם במיקום אחר בתיאום מראש, בהתאם למסלול הקבוצה.</p>
+    </div>
+    <div class="card-grid cols-4">
+      <div class="card"><div class="num-badge">1</div><h4>משלחות מחו"ל</h4><p>חיבור אישי לארץ ולאנשיה דרך סיפור אמיתי, בשפה ובקצב המתאימים לקבוצה.</p></div>
+      <div class="card"><div class="num-badge">2</div><h4>מכינות קדם־צבאיות</h4><p>טעימה מעולם ההכנה לצה"ל והכושר הקרבי, באווירה בטוחה ומותאמת.</p></div>
+      <div class="card"><div class="num-badge">3</div><h4>בתי ספר ותנועות נוער</h4><p>מפגש חווייתי עם ערכי כבוד, חברות, נחישות ומנהיגות — דרך סיפורו של ליאב.</p></div>
+      <div class="card"><div class="num-badge">4</div><h4>גיבוש צוותים בארגונים</h4><p>מאמץ משותף שבונה רוח צוות אמיתית, מבוסס על עבודת צוות בשטח.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT LIAV ===== -->
+<section id="about-liav" class="photo-band">
+  <div class="wrap photo-grid">
+    <div class="photo-frame">
+      <img src="images/memorial_002.jpg" alt="לזכרו של רס״ל ליאב אלוש ז״ל">
+    </div>
+    <div class="photo-text">
+      <span class="section-tag green">הסיפור שממשיך בגדרה</span>
+      <h2>רס"ל ליאב אלוש ז"ל, 27.12.2001–17.12.2023</h2>
+      <p>ליאב גדל בגדרה, בן למלי וקובי ואח לעמית. הוא שירת כלוחם בצוות 100, ביחידת דובדבן, ונהרג בקרב בחאן יונס שבעזה עשרה ימים לפני יום הולדתו ה־22.</p>
+      <div class="quote-block">
+        "לוחם עומד זקוף גם כשהוא כבר לא יכול לעמוד יותר"
+        <cite>מתוך הפנקס האישי של ליאב</cite>
+      </div>
+      <p>ברוח אמונתו של ליאב שהשירות הצבאי הוא הזדמנות, הוקם צוות אלוש — מיזם של עמותת מסלול חדש: קבוצת כושר קרבי והכנה לצה"ל לנוער בכיתות י'–י"ב בגדרה, בהובלת קובי אלוש, אביו של ליאב. הצוות מכין בני נוער לגיבושים ולמיונים, ומקיים בגדרה אירועי הנצחה ואליפות כושר שנתית.</p>
+      <div class="values-row">
+        <span class="value-chip">כבוד</span>
+        <span class="value-chip">חברות</span>
+        <span class="value-chip">נחישות</span>
+        <span class="value-chip">מנהיגות</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAGES ===== -->
+<section id="stages" class="prog-section alt">
+  <div class="wrap">
+    <span class="section-tag gold">מהלך הפעילות</span>
+    <div class="section-head">
+      <h2>מפגש אחד, שלושה חלקים משתלבים</h2>
+      <p>המפגש בנוי משלושה חלקים שמשתלבים זה בזה: סיפור, חוויה גופנית ושיחה על משמעות. סדר השלבים והעצימות מותאמים לתוכנית הקבוצה.</p>
+    </div>
+    <div class="stage-grid">
+      <div class="stage-card">
+        <div class="kicker"><div class="num-badge">1</div><h4>היכרות עם ליאב</h4></div>
+        <div class="dur">20–40 דקות</div>
+        <p>סיפור חייו של ליאב בתמונות ובסרטון הצוות "שירות משמעותי", ומפגש עם המשפחה וצוות ההנצחה. מי היה ליאב, מה הוביל אותו, ואיך משפחה וקהילה בוחרות להנציח דרך עשייה למען הדור הבא.</p>
+      </div>
+      <div class="stage-card">
+        <div class="kicker"><div class="num-badge">2</div><h4>אימון כושר קרבי בצוותים</h4></div>
+        <div class="dur">45–100 דקות</div>
+        <p>אימון בסגנון צוות אלוש: חימום, ואחריו מקצה ובו שילוב של תרגילים צבאיים — סחיבת אלונקות, נשיאת שקי חול ופינוי פצוע. עבודת הצוות היא המפתח, והמשימות בנויות כך ששום צוות לא מסיים בלי כל חבריו.</p>
+      </div>
+      <div class="stage-card">
+        <div class="kicker"><div class="num-badge">3</div><h4>שיחה על שירות משמעותי</h4></div>
+        <div class="dur">25–40 דקות</div>
+        <p>מעגל סיכום: מהו שירות משמעותי בצה"ל, מה מניע צעירים ישראלים לתת מעצמם, ואיך כל משתתף יכול להביא את ערכי הנחישות והרעות לקהילה שלו — בארץ ובחו"ל.</p>
+      </div>
+    </div>
+    <div class="stage-note">* מה הקבוצה לוקחת איתה: הפעילות מתאימה למגוון מסגרות — משלחות מחו"ל, מכינות קדם־צבאיות, בתי ספר, תנועות נוער וגיבוש צוותים בארגונים.</div>
+  </div>
+</section>
+
+<!-- ===== TAKEAWAYS ===== -->
+<section id="takeaways">
+  <div class="wrap">
+    <span class="section-tag">מה הקבוצה לוקחת איתה</span>
+    <div class="section-head">
+      <h2>חמישה דברים שנשארים אחרי היום בשטח</h2>
+      <p>מעבר לחוויה עצמה, כל קבוצה יוצאת עם חיבור אישי, כלים ותובנות שממשיכים איתה גם אחרי שהיא עוזבת את גדרה.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card"><div class="num-badge">1</div><h4>חיבור אישי לארץ ולאנשיה</h4><p>סיפור אמיתי של לוחם צעיר בגילם, מפי מי שהכירו אותו, ואימון על אדמת הארץ — במקום הסבר כללי על מלחמה ושכול, חוויה שנשארת.</p></div>
+      <div class="card"><div class="num-badge">2</div><h4>הצצה לשירות הצבאי מבפנים</h4><p>טעימה מעולם ההכנה לצה"ל והכושר הקרבי, באווירה בטוחה ומותאמת.</p></div>
+      <div class="card"><div class="num-badge">3</div><h4>גיבוש הקבוצה</h4><p>מאמץ משותף שמחבר בין המשתתפים ובונה רוח צוות.</p></div>
+      <div class="card"><div class="num-badge">4</div><h4>ערכים שלוקחים הביתה</h4><p>כבוד, חברות, נחישות ומנהיגות — כפי שהובילו את ליאב.</p></div>
+      <div class="card"><div class="num-badge">5</div><h4>משמעות השירות</h4><p>מה משמעות השירות הצבאי בחיי צעיר ישראלי, ואיך קהילה הופכת אובדן לעשייה.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHOTO MOMENT: TRAINING ===== -->
+<section class="photo-band alt-bg">
+  <div class="wrap photo-grid reverse">
+    <div class="photo-text">
+      <span class="section-tag gold">רגע מהשטח</span>
+      <h2>לא רק אימון — חוויה שנשארת</h2>
+      <p>כל תרגיל נבנה כך שאף אחד לא מסיים לבד. סחיבת אלונקות, נשיאת שקי חול ופינוי פצוע — לא רק אתגר גופני, אלא תרגול של עבודת צוות אמיתית, ברוח האימונים של צוות אלוש.</p>
+      <ul class="photo-highlights">
+        <li>מאמנים מוסמכים מלווים כל שלב באימון</li>
+        <li>עצימות ורמת מאמץ מותאמות לקבוצה, ללא צורך בניסיון קודם</li>
+        <li>מי שלא יכול או לא מעוניין להתאמן לוקח חלק בתפקידי צוות אחרים</li>
+      </ul>
+    </div>
+    <div class="photo-frame">
+      <img src="images/stretcher_032.jpg" alt="קבוצה מתאמנת בסחיבת אלונקה בשטח בגדרה">
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGISTICS / SAFETY ===== -->
+<section id="logistics" class="prog-section alt">
+  <div class="wrap">
+    <span class="section-tag green">לוגיסטיקה, התאמות ובטיחות</span>
+    <div class="section-head">
+      <h2>כל מה שצריך לדעת לפני הפעילות</h2>
+      <p>הציוד, הלוגיסטיקה וההתאמות נבנים כך שהקבוצה תוכל להתמקד בחוויה עצמה — בלי דאגות מיותרות.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">ציוד ולוגיסטיקה</div>
+        <p>כל ציוד האימון — אלונקות, שקי חול ואביזרי אימון — מסופק במלואם על ידי עמותת מסלול חדש.</p>
+        <ul>
+          <li>למשתתפים: בגדי ספורט, נעלי ריצה, כובע ומים (לפחות 1.5 ליטר)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="label">התאמה אישית</div>
+        <p>מי שלא מעוניין/ת או לא יכול/ה להתאמן לוקח/ת חלק בתפקידי צוות אחרים: ניווט, פיקוד ועידוד. רמת המאמץ מותאמת לקבוצה ללא צורך בניסיון קודם.</p>
+      </div>
+      <div class="info-card">
+        <div class="label">בטיחות</div>
+        <p>מאמנים מוסמכים, ערכת עזרה ראשונה בשטח, הפסקות שתייה קבועות והתאמת עומס למזג האוויר. העמותה מבוטחת בביטוח צד ג'.</p>
+      </div>
+      <div class="info-card">
+        <div class="label">רגישות</div>
+        <p>את סיפור ההנצחה מעבירים ברגישות ובמיקוד בחיים ובערכים. הפעילות מתאימה לקהל מגוון, גם למי שאינו מכיר את ההקשר הישראלי.</p>
+      </div>
+    </div>
+    <div class="stage-note"><strong>תמחור:</strong> לפי גודל הקבוצה ומיקום הפעילות — צרו קשר לקבלת הצעת מחיר מותאמת.</div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / CTA ===== -->
+<section id="contact" class="contact-cta">
+  <div class="wrap">
+    <h2>בואו <span class="green">נתאם</span><br>חוויית שטח לקבוצה שלכם</h2>
+    <p>עמותת מסלול חדש, יחד עם מיזם צוות אלוש, מזמינה קבוצות מהארץ ומחו"ל להתחבר לארץ ולאנשיה דרך סיפורו של ליאב.</p>
+    <div class="contact-cards">
+      <div class="contact-card"><div><div class="label">איש קשר</div><div class="value">רולי חדש, מנכ"ל מסלול חדש · <a href="tel:0528501313">052-8501313</a></div></div><span class="dot"></span></div>
+      <div class="contact-card"><div><div class="label">כתובת דואר אלקטרוני</div><div class="value"><a href="mailto:newmaslul@gmail.com">newmaslul@gmail.com</a></div></div><span class="dot"></span></div>
+      <div class="contact-card"><div><div class="label">אתר האינטרנט וכתובת העמותה</div><div class="value">newmaslul.co.il · גדרה, פנינה 8</div></div><span class="dot"></span></div>
+    </div>
+    <div class="cta-buttons">
+      <a class="pill-link" href="#audience">לבחור</a>
+      <a class="pill-link" href="#about-liav">להאמין</a>
+      <a class="pill-link" href="#stages">להצליח</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">מסלול חדש — עמותה לחוסן והעצמה ומנהיגות · newmaslul.co.il</footer>
+
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=972528501313&text=שלום%0Aמבקש/ת+פרטים+על+פעילות+%22בדרכו+של+ליאב%22+לקבוצות" target="_blank" rel="noopener" aria-label="צור קשר בוואטסאפ">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.4.7 4.7 1.9 6.6L3 29l7.1-2.3c1.8 1 3.8 1.5 5.9 1.5 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z" fill="#fff"/>
+    <path d="M22.4 18.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-.9 2.4.1 1.4 1 2.8 1.1 3 .1.2 2 3.1 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z" fill="#25D366"/>
+  </svg>
+</a>
+
+<script>
+var menuToggle = document.getElementById('menuToggle');
+var mobileLinks = document.getElementById('mobileLinks');
+menuToggle.addEventListener('click', function(){
+  var isOpen = mobileLinks.classList.toggle('open');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+mobileLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){
+    mobileLinks.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  });
+});
+</script>
+
+</body>
+</html>
